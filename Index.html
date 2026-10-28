@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>If— Poem | 50 MCQs Test</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #edf3ff;
+    margin: 0;
+    padding: 15px;
+    color: #202b3c;
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px #00000018;
+}
+
+h1 {
+    color: #173b73;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    line-height: 1.6;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 7px;
+    margin: 10px 0 20px;
+    font-size: 16px;
+}
+
+.question {
+    border: 1px solid #d9e2f1;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 18px 0;
+}
+
+.question h3 {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.option {
+    display: block;
+    padding: 11px;
+    margin: 8px 0;
+    background: #f3f6fc;
+    border-radius: 7px;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.option:hover {
+    background: #e1eaff;
+}
+
+.option input {
+    margin-right: 8px;
+}
+
+.option.correct {
+    background: #d6f5dc;
+    border: 1px solid #269746;
+}
+
+.option.incorrect {
+    background: #ffe0e0;
+    border: 1px solid #dc4545;
+}
+
+.feedback {
+    font-weight: bold;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+button {
+    border: none;
+    padding: 13px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 6px 3px;
+}
+
+.submit {
+    background: #173b73;
+    color: white;
+    width: 100%;
+}
+
+.reset {
+    background: #e2e8f0;
+    color: #172033;
+}
+
+#result {
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    background: #e8f5e9;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.small {
+    color: #526174;
+    font-size: 14px;
+}
+
+@media(max-width:500px) {
+    .container {
+        padding: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>English Literature Test</h1>
+
+<h2 style="text-align:center;">Poem: If—</h2>
+
+<p class="subtitle">
+<strong>Poet:</strong> Rudyard Kipling<br>
+<strong>Total Questions:</strong> 50<br>
+<strong>Total Marks:</strong> 50
+</p>
+
+<label for="studentName"><strong>Student Name:</strong></label>
+<input type="text" id="studentName" placeholder="Enter your name">
+
+<p class="small">
+Select one answer for each question. Your score will be shown at the end.
+</p>
+
+<div id="quiz"></div>
+
+<button class="submit" id="submitBtn" onclick="submitTest()">
+Submit Test
+</button>
+
+<button class="reset" onclick="resetTest()">
+Restart Test
+</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+const questions = [
+
+{
+q:"Who wrote the poem “If—”?",
+o:["John Keats","Rudyard Kipling","William Wordsworth","Robert Frost"],
+a:1,
+e:"Rudyard Kipling is the poet of “If—”."
+},
+
+{
+q:"What is the main theme of the poem?",
+o:["Romantic love","Natural beauty","Self-control and maturity","Political conflict"],
+a:2,
+e:"The poem teaches self-control, patience, courage and maturity."
+},
+
+{
+q:"The poem is mainly presented as advice from:",
+o:["A father to his son","A king to his soldiers","A teacher to a class","A friend to a stranger"],
+a:0,
+e:"The poem is structured as advice from a father to his son."
+},
+
+{
+q:"Which literary form best describes “If—”?",
+o:["A short story","A drama","A novel","A didactic poem"],
+a:3,
+e:"It is a didactic poem because it teaches moral lessons."
+},
+
+{
+q:"What does the poem encourage us to do during difficult situations?",
+o:["Lose hope","Remain calm","Blame others","Avoid responsibility"],
+a:1,
+e:"The poem emphasizes calmness and self-control."
+},
+
+{
+q:"Which quality is especially important in the poem?",
+o:["Jealousy","Pride","Patience","Revenge"],
+a:2,
+e:"Patience helps a person face difficulties wisely."
+},
+
+{
+q:"What should a person do when others doubt them?",
+o:["Maintain self-confidence","Stop working","Become angry","Give up immediately"],
+a:0,
+e:"The poem encourages confidence while remaining open to others' opinions."
+},
+
+{
+q:"In the poem, triumph and disaster represent:",
+o:["Two countries","Two types of friends","Two seasons","Success and failure"],
+a:3,
+e:"Triumph represents success, while disaster represents failure or misfortune."
+},
+
+{
+q:"Which device is created by repeating the same consonant sound at the beginning of nearby words?",
+o:["Metaphor","Alliteration","Simile","Irony"],
+a:1,
+e:"Alliteration is the repetition of initial consonant sounds."
+},
+
+{
+q:"A comparison using “like” or “as” is called:",
+o:["Personification","Metaphor","Simile","Hyperbole"],
+a:2,
+e:"A simile compares two things using words such as like or as."
+},
+
+{
+q:"A direct comparison without using “like” or “as” is called:",
+o:["Metaphor","Simile","Alliteration","Onomatopoeia"],
+a:0,
+e:"A metaphor describes one thing as another to suggest a similarity."
+},
+
+{
+q:"Giving human qualities to a non-human thing is:",
+o:["Rhyme","Simile","Alliteration","Personification"],
+a:3,
+e:"Personification gives human qualities or actions to non-human things."
+},
+
+{
+q:"The repetition of similar ending sounds is known as:",
+o:["Imagery","Rhyme","Metaphor","Irony"],
+a:1,
+e:"Rhyme occurs when words have similar ending sounds."
+},
+
+{
+q:"Language that appeals to the senses is called:",
+o:["Hyperbole","Alliteration","Imagery","Paradox"],
+a:2,
+e:"Imagery creates sensory impressions involving sight, sound, touch, taste or smell."
+},
+
+{
+q:"An exaggeration for emphasis is called:",
+o:["Hyperbole","Simile","Symbolism","Rhyme"],
+a:0,
+e:"Hyperbole is deliberate exaggeration for emphasis."
+},
+
+{
+q:"The repetition of a word or phrase for emphasis is called:",
+o:["Metaphor","Irony","Imagery","Repetition"],
+a:3,
+e:"Repetition emphasizes an idea or creates rhythm."
+},
+
+{
+q:"What is the dominant tone of the poem?",
+o:["Hopeless and bitter","Advisory and encouraging","Comic and playful","Angry and threatening"],
+a:1,
+e:"The speaker gives serious advice in an encouraging, instructive tone."
+},
+
+{
+q:"Which quality helps a person continue after failure?",
+o:["Carelessness","Arrogance","Perseverance","Jealousy"],
+a:2,
+e:"Perseverance means continuing despite difficulties."
+},
+
+{
+q:"What does the poem suggest about success?",
+o:["Do not let success make you arrogant","Success makes everyone perfect","Success is more important than honesty","Success should be avoided"],
+a:0,
+e:"The poem advises readers to remain balanced and humble in success."
+},
+
+{
+q:"What does the poem suggest about failure?",
+o:["Failure must always be hidden","Failure makes life meaningless","Failure should be blamed on others","Face failure without losing courage"],
+a:3,
+e:"The poem teaches resilience when facing failure."
+},
+
+{
+q:"What is the purpose of the repeated conditional word in the title?",
+o:["To tell a historical story","To introduce conditions for mature conduct","To describe a landscape","To identify a character"],
+a:1,
+e:"The title introduces conditions associated with developing good character."
+},
+
+{
+q:"Which word best describes the poem's message about self-control?",
+o:["Recklessness","Selfishness","Discipline","Fear"],
+a:2,
+e:"Discipline and self-control are central ideas in the poem."
+},
+
+{
+q:"What does keeping one's head suggest?",
+o:["Remaining calm under pressure","Being physically tall","Winning every argument","Avoiding all people"],
+a:0,
+e:"It means staying calm
